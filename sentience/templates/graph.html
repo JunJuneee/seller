@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+{% block head %}
+<script type="text/javascript">
+  google.charts.load('current', {'packages':['corechart']});
+  google.charts.setOnLoadCallback(drawChart);
+  var data_list1 = {{data_list1|safe}};
+  var data_list2 = {{data_list2|safe}};
+  var data_list3 = {{data_list3|safe}};
+
+</script>
+
+{% endblock %}
+
+{% block body %}
+
+  <div class="container m-b-40">
+    <a id="kakao-link-btn" href="javascript:sendLink()">
+      <img
+        src="https://developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png"
+      />
+    </a>
+    <div class="row">
+      <div class="col-12">
+        <div id="curve_chart1" class="chart"></div>
+      </div>
+    </div>
+  </div>
+  <div class="container ">
+    <div class="row">
+      <div class="col-xl-7">
+        <div id="curve_chart2" class="chart"></div>
+      </div>
+      <div class="col-xl-5">
+        <div id="chart_div" class="chart"></div>
+
+      </div>
+    </div>
+  </div>
+
+
+
+{% endblock %}
