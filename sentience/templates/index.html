@@ -1,28 +1,30 @@
 {% extends "layout.html" %}
 {% block body %}
+
+
 <div class="bg">   
     
   <form  method="POST" >
     {{ form.hidden_tag() }}
-  <div class="container">
+  <div class="container p-20">
   
   
-    <div class="row">
+    <div class="row m-b-0">
       <div class="col">
 
         {{ form.product_type(class="form-control form-control-lg select list-group-item ") }}
       </div>
     </div>
     <div class="row">
-      <div class="col-md position-relative"> {{ form.country(class="form-control form-control-lg list-group-item fs-16") }}<i class="fas fa-globe-asia"></i></div>
-      <div class="col-md position-relative">{{ form.key_word(class="form-control form-control-lg list-group-item fs-16",placeholder="키워드") }}<i class="fas fa-search"></i></div>
-      <div class="col-md">
-        {{form.submit (class="form-control form-control-lg  search list-group-item fs-16")}}
+      <div class="col-md position-relative m-t-20"> {{ form.country(class="form-control form-control-lg list-group-item fs-16") }}<i class="fas fa-globe-asia"></i></div>
+      <div class="col-md position-relative m-t-20">{{ form.key_word(class="form-control form-control-lg list-group-item fs-16",placeholder="키워드") }}<i class="fas fa-search"></i></div>
+      <div class="col-md m-t-20">
+        {{form.submit (class="form-control form-control-lg  search list-group-item fs-16 p-0")}}
       </div>
     </div>
     <div class="row mb-0">
       <p class="lh-1-4 mb-0">* 자동완성 기능을 이용해 대분류를 선택해 주세요.</p>
-      <p class="lh-1-4 mb-0">* 영어 키워드를 입력하면 보다 정확한 정보를 알 수 있습니다.</p>
+      <p class="lh-1-4 mb-0">* 영어 키워드를 입력하면 정확한 정보를 알 수 있습니다.</p>
     </div>
   </div>
 </form>

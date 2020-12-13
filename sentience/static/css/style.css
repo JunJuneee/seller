@@ -5,7 +5,12 @@ html, body{
 .chart{
   width: 100%; min-height: 400px;}
 
-
+.search_bar{
+  border: 2px solid #FF8333; padding: 0 60px !important; border-radius: 40px !important; padding: ;
+}
+.kw{
+  margin: 7px 0 !important;
+}
 .bg{
   width: 100%;
   height : 100%;
@@ -15,16 +20,19 @@ html, body{
   background-position: center;
   z-index: 1;
 }
+.container-border{
+  border: 2px solid #FF8333 !important;
+  border-radius: 5px;
+}
 
 .form-control:focus{
   border-color:#FF8333 !important;
   box-shadow : 0 0 0 0.2rem #EE9C68 !important;
-
-
 }
-/* select::placeholder{
-  color: red !important ;
-} */
+
+.bg1{
+  background: #EE9C68;
+}
 
 .search{
   background: #FF8333 !important;
@@ -48,6 +56,7 @@ form {
 
 .container{
   width: 80% !important;
+  opacity: 0.9;
 }
 
 

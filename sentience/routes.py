@@ -1,6 +1,6 @@
 from sentience import app
 from sentience.utils import country_db, google_trends, related_queries
-from flask import render_template, redirect, url_for
+from flask import render_template, redirect, url_for, request
 from sentience.forms import FindProduct
 
 
@@ -23,4 +23,4 @@ def graph(hs_code,country,keyword):
   data_list2 = google_trends(country,keyword)
   data_list3 = related_queries(country,keyword)
 
-  return render_template('graph.html',data_list1=data_list1,data_list2=data_list2,data_list3=data_list3)
+  return render_template('graph.html',data_list1=data_list1,data_list2=data_list2,data_list3=data_list3,keyword=keyword)

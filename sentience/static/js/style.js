@@ -1,18 +1,5 @@
 
 
-  function sendLink() {
-    Kakao.Link.sendDefault({
-      objectType: 'text',
-      text:
-        '기본 템플릿으로 제공되는 텍스트 템플릿은 텍스트를 최대 200자까지 표시할 수 있습니다. 텍스트 템플릿은 텍스트 영역과 하나의 기본 버튼을 가집니다. 임의의 버튼을 설정할 수도 있습니다. 여러 장의 이미지, 프로필 정보 등 보다 확장된 형태의 카카오링크는 다른 템플릿을 이용해 보낼 수 있습니다.',
-      link: {
-        mobileWebUrl:
-          'https://developers.kakao.com/docs/js/kakaotalklink#텍스트-템플릿-보내기',
-        webUrl:
-          'https://developers.kakao.com/docs/js/kakaotalklink#텍스트-템플릿-보내기',
-      },
-    })
-  }
 
   function drawChart() {
     
@@ -25,7 +12,7 @@
 
 
     var options1 = {
-      title: '수출액',
+      title: '수출 그래프',
       curveType: 'function',
       legend: { position: 'bottom' },
       chartArea: { width: "70%"}
@@ -37,14 +24,18 @@
       title: '구글 트랜드 관련 검색어',
       curveType: 'function',
       legend: { position: 'bottom' },
-      chartArea: {width: "90%"}
+      chartArea: {width: "90%"},
+      titleTextStyle :{fontSize:20}
+
+      
 
       
     };
     var options3 = {
     title: '연관검색어 ',
     sliceVisibilityThreshold: .01,
-    chartArea: { width: "100%"}
+    chartArea: { width: "100%"},
+    titleTextStyle :{fontSize:20}
 
     };
 
@@ -69,7 +60,7 @@
 
 
     var options1 = {
-      title: '수출액',
+      title: '품목별 수출 그래프',
       curveType: 'function',
       legend: { position: 'bottom' },
       chartArea: { width: "70%"}
@@ -78,7 +69,7 @@
 
     };
     var options2 = {
-      title: '구글 트랜드 관련 검색어',
+      title: '구글 트랜드 검색어 트랜드',
       curveType: 'function',
       legend: { position: 'bottom' },
       chartArea: {width: "90%"}
@@ -86,7 +77,7 @@
       
     };
     var options3 = {
-    title: '연관검색어 ',
+    title: '구글 트랜드 연관검색어 ',
     sliceVisibilityThreshold: .01,
     chartArea: { width: "100%"}
 
@@ -103,4 +94,4 @@
   }
 
 
-  Kakao.init('b08b26aba26f5e4e75dfcc1d61ead14f');
+  

@@ -18,7 +18,7 @@ def country_db(hs_code,country):
   exports_list = [int(x['balPayments']) for x in xml['response']['body']['items']['item']]
   amount_list = [int(x['expWgt']) for x in xml['response']['body']['items']['item']]
   combined_list =list(map(list, zip(year_list,exports_list,amount_list))) 
-  combined_list.insert(0,['Year', 'Sales', 'Amount'])
+  combined_list.insert(0,['Year', '수출 금액($)', '수출 중량(kg)'])
 
   return combined_list
 
@@ -37,7 +37,7 @@ def google_trends(country,keyword):
     date = [str(x)[2:7].replace('-','.') for x in data.index.tolist()]
     key_word_value = [x for x in data[keyword]]
     google_list = list(map(list, zip(date,key_word_value)))[2:-1]
-    google_list.insert(0,['Year', 'Interest'])
+    google_list.insert(0,['Year', '인기지수'])
 
   return google_list
 
