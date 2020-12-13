@@ -12,7 +12,7 @@ def home():
     hs_code = form.product_type.data if len(form.product_type.data)  >= 4 else '0'+ form.product_type.data
     country = form.country.data
     keyword = form.key_word.data
-    return redirect(url_for('graph',hs_code=hs_code,country=country,keyword=keyword))
+    return redirect(url_for('main.graph',hs_code=hs_code,country=country,keyword=keyword))
 
   return render_template('index.html',form=form )
 
