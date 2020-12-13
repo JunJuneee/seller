@@ -1,8 +1,15 @@
 from flask import Flask
-
-app = Flask(__name__)
-app.config['SECRET_KEY'] = '5791628bb0b13ce0c676dfde280ba245'
+from sentience.config import Config
 
 
-from sentience import routes
+
+def create_app(config_class=Config):
+  app = Flask(__name__)
+  app.config.from_object(Config)
+
+  from sentience.main.routes import main
+  app.register_blueprint(main)
+
+  return app
+
 

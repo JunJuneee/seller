@@ -1,8 +1,10 @@
-from sentience import app
+from flask import render_template, redirect, url_for, request, Blueprint
+from sentience.main.forms import FindProduct
+from sentience.main.utils import country_db, google_trends, related_queries
 
+main = Blueprint('main', __name__)
 
-
-@app.route("/",methods=['GET', 'POST'])
+@main.route("/",methods=['GET', 'POST'])
 def home():
   form = FindProduct()
   if form.validate_on_submit():
@@ -15,7 +17,7 @@ def home():
   return render_template('index.html',form=form )
 
 
-@app.route('/graph/<hs_code>/<country>/<keyword>',methods=['GET','POST'])
+@main.route('/graph/<hs_code>/<country>/<keyword>',methods=['GET','POST'])
 def graph(hs_code,country,keyword):
   data_list1 = country_db(hs_code,country)
   data_list2 = google_trends(country,keyword)
