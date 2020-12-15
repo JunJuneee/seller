@@ -2,9 +2,10 @@ from flask_wtf import FlaskForm
 from wtforms import SubmitField,SelectField,StringField
 from wtforms.validators import DataRequired
 import csv
+import os
 
 
-with open('/Users/OHHANJUN/Desktop/sentience/sentience/main/hs_code.csv', 'r',encoding='CP949') as f:
+with open(os.getcwd()+'/sentience/main/hs_code.csv', 'r',encoding='CP949') as f:
   reader = csv.reader(f)
   select_choices = [tuple(x) for x in reader]
 
